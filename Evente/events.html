@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<title>Eventе</title>
+		
+		<!-- metadata -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- css -->		
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!-- js -->
+		<!-- <script src="js/script.js" src="http://code.jquery.com/jquery-1.7.1.min.js" type="text/javascript"></script> -->
+		<script src="js/calendar.js" type="text/javascript"></script>			
+	</head>
+	
+	
+	<body>
+		<div class ="container">
+			<div class="topnav" id="myTopnav">
+				<a href="index.html">HOME</a>
+				<a href="events.html" class="active">EVENTS</a>
+				<a href="about.html">ABOUT</a>
+				<a href="login.html">LOGIN</a>
+		    </div>
+		<!--- CALENDAR starts -->
+			  <div id="page-body">
+				<!-- [PERIOD SELECTOR] -->
+				<div id="cal-date">
+				  <select id="cal-mth"></select>
+				  <select id="cal-yr"></select>
+				  <input id="cal-set" type="button" value="SET"/>
+				</div>
+
+				<!-- [CALENDAR] -->
+				<div id="cal-container"></div>
+
+				<!-- [EVENT] -->
+				<div id="cal-event"></div>
+			  </div>
+		<!--- CALENDAR ends-->
+		</div>
+		
+	</body>
+</html>
