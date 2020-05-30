@@ -18,6 +18,7 @@ $articles = $article->fetch_all();
  			<ul class="nav">
 			  <li class="nav-item">
 			    <a class="nav-link " href="admin/admin.php">Log In</a>
+				<a class="nav-link " href="admin/calendar.php">Calendar</a>
 			  </li>
 			</ul>
   			<a class="navbar-brand" href="index.php">Event Organizer</a>
