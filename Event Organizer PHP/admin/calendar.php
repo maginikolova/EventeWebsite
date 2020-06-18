@@ -2,7 +2,7 @@
 require_once('../includes/connection.php');
 
 
-$sql = "SELECT id, title, start, end, color FROM events ";
+$sql = "SELECT id, title, start, end, color, organizer, eventType, foodType, people FROM events ";
 
 $req = $pdo->prepare($sql);
 $req->execute();
@@ -33,7 +33,7 @@ $events = $req->fetchAll();
 
     <!-- Custom CSS -->
     <style>
-	#calendar {
+    #calendar {
 		max-width: 600px;
 		margin-bottom: 20px;
 	}
@@ -67,7 +67,7 @@ $events = $req->fetchAll();
     			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     			<!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">GO</button> -->
   			</form>
-		</nav>
+	</nav>
 
     <!-- Page Content -->
     <div class="container">
@@ -118,6 +118,20 @@ $events = $req->fetchAll();
 					</div>
 				  </div>
 				  <div class="form-group">
+					<label for="organizer" class="col-sm-2 control-label">Oganizer</label>
+					<div class="col-sm-10">
+					  <select name="organizer" class="form-control" id="organizer">
+						  <option value="">Choose</option>
+						  <option> Oganizer 1 </option>
+						  <option> Oganizer 2 </option>
+						  <option> Oganizer 3 </option>						  
+						  <option> Oganizer 4 </option>
+						  <option> Oganizer 5 </option>
+						  <option> Oganizer 6 </option>
+						</select>
+					</div>
+				  </div>
+				  <div class="form-group">
 					<label for="start" class="col-sm-2 control-label">Start date</label>
 					<div class="col-sm-10">
 					  <input type="text" name="start" class="form-control" id="start" readonly>
@@ -129,7 +143,37 @@ $events = $req->fetchAll();
 					  <input type="text" name="end" class="form-control" id="end" readonly>
 					</div>
 				  </div>
-				
+				  <div class="form-group">
+					<label for="eventType" class="col-sm-2 control-label">Type of event</label>
+					<div class="col-sm-10">
+					  <select name="eventType" class="form-control" id="eventType">
+						  <option value="">Choose</option>
+						  <option> Private Party </option>
+						  <option> Birthday party</option>
+						  <option> Team building </option>						  
+						  <option> Conference </option>
+						  <option> Wedding </option>
+						  <option> Private Party </option>
+						  <option> Other </option>
+					  </select>
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="people" class="col-sm-2 control-label">Number of people</label>
+					<div class="col-sm-10">
+					  <input type="number" name="people" class="form-control" id="people">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="foodType" class="col-sm-2 control-label">Type of food</label>
+					<div class="col-sm-10">
+					  <select name="foodType" class="form-control" id="foodType">
+						  <option value="">Choose</option>
+						  <option> Menu </option>
+						  <option> Catering </option>
+					  </select>
+					</div>
+				  </div>
 			  </div>
 			  <div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -139,7 +183,6 @@ $events = $req->fetchAll();
 			</div>
 		  </div>
 		</div>
-		
 		
 		
 		<!-- Modal -->
@@ -163,7 +206,6 @@ $events = $req->fetchAll();
 					<label for="color" class="col-sm-2 control-label">Color</label>
 					<div class="col-sm-10">
 					  <select name="color" class="form-control" id="color">
-						  <option value="">Choose</option>
 						  <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
 						  <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
 						  <option style="color:#008000;" value="#008000">&#9724; Green</option>						  
@@ -176,28 +218,69 @@ $events = $req->fetchAll();
 					</div>
 				  </div>
 				  <div class="form-group">
+					<label for="organizer" class="col-sm-2 control-label">Oganizer</label>
+					<div class="col-sm-10">
+					  <select name="organizer" class="form-control" id="organizer">
+						  <option> Oganizer 1 </option>
+						  <option> Oganizer 2 </option>
+						  <option> Oganizer 3 </option>						  
+						  <option> Oganizer 4 </option>
+						  <option> Oganizer 5 </option>
+						  <option> Oganizer 6 </option>
+						</select>
+					</div>
+				  </div>
+				  <div class="form-group">
 					<label for="start" class="col-sm-2 control-label">Start date</label>
 					<div class="col-sm-10">
 					  <input type="text" name="start" class="form-control" id="start">
 					</div>
 				  </div>
 				  <div class="form-group">
-					<label for="end" class="col-sm-2 control-label">End date</label>
+					<label for="end" class="col-sm-2 control-label"> End date </label>
 					<div class="col-sm-10">
 					  <input type="text" name="end" class="form-control" id="end">
 					</div>
 				  </div>
-				    <div class="form-group"> 
-						<div class="col-sm-offset-2 col-sm-10">
-						  <div class="checkbox">
+				  <div class="form-group">
+					<label for="eventType" class="col-sm-2 control-label">Type of event</label>
+					<div class="col-sm-10">
+					  <select name="eventType" class="form-control" id="eventType">
+						  <option> Private Party </option>
+						  <option> Birthday party</option>
+						  <option> Team building </option>						  
+						  <option> Conference </option>
+						  <option> Wedding </option>
+						  <option> Private Party </option>
+						  <option> Other </option>
+					  </select>
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="people" class="col-sm-2 control-label">Number of people</label>
+					<div class="col-sm-10">
+					  <input type="number" name="people" class="form-control" id="people">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="foodType" class="col-sm-2 control-label">Type of food</label>
+					<div class="col-sm-10">
+					  <select name="foodType" class="form-control" id="foodType">
+						  <option> Menu </option>
+						  <option> Catering </option>
+					  </select>
+					</div>
+				  </div>
+				  <div class="form-group"> 
+				  	<div class="col-sm-offset-2 col-sm-10">
+				    	<div class="checkbox">
 							<label class="text-danger"><input type="checkbox"  name="delete"> Delete event</label>
-						  </div>
 						</div>
 					</div>
+				  </div>
 				  
 				  <input type="hidden" name="id" class="form-control" id="id">
-				
-				
+
 			  </div>
 			  <div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -231,7 +314,7 @@ $events = $req->fetchAll();
 				center: 'title',
 				right: 'month,basicWeek,basicDay'
 			},
-			defaultDate: '2020-05-12',
+			defaultDate: '2020-06-10',
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
 			selectable: true,
@@ -247,17 +330,21 @@ $events = $req->fetchAll();
 					$('#ModalEdit #id').val(event.id);
 					$('#ModalEdit #title').val(event.title);
 					$('#ModalEdit #color').val(event.color);
-					$('#ModalEdit #start').val((event.start).format('YYYY-MM-DD HH:mm:ss'));
-					$('#ModalEdit #end').val((event.start).format('YYYY-MM-DD HH:mm:ss'));
 					$('#ModalEdit').modal('show');
+					$('#ModalEdit #start').val((event.start).format('YYYY-MM-DD HH:mm:ss'));
+					$('#ModalEdit #end').val((event.end).format('YYYY-MM-DD HH:mm:ss'));
+					$('#ModalEdit #organizer').val(event.organizer);
+					$('#ModalEdit #eventType').val(event.eventType);
+					$('#ModalEdit #foodType').val(event.foodType);
+					$('#ModalEdit #people').val(event.people);
 				});
 			},
-			eventDrop: function(event, delta, revertFunc) { // for changed position
+			eventDrop: function(event, delta, revertFunc) { // si changement de position
 
 				edit(event);
 
 			},
-			eventResize: function(event,dayDelta,minuteDelta,revertFunc) { // for changed length
+			eventResize: function(event,dayDelta,minuteDelta,revertFunc) { // si changement de longueur
 
 				edit(event);
 
@@ -284,6 +371,10 @@ $events = $req->fetchAll();
 					start: '<?php echo $start; ?>',
 					end: '<?php echo $end; ?>',
 					color: '<?php echo $event['color']; ?>',
+					organizer: '<?php echo $event['organizer']; ?>',
+					eventType: '<?php echo $event['eventType']; ?>',				
+					people: '<?php echo $event['people']; ?>',
+					foodType: '<?php echo $event['foodType']; ?>',
 				},
 			<?php endforeach; ?>
 			]
@@ -303,6 +394,10 @@ $events = $req->fetchAll();
 			Event[0] = id;
 			Event[1] = start;
 			Event[2] = end;
+			Event[3] = organizer;
+			Event[4] = eventType;
+			Event[5] = people;
+			Event[6] = foodType;
 			
 			$.ajax({
 			 url: 'editEventDate.php',

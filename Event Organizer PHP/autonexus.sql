@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2020 at 09:17 PM
+-- Generation Time: Jun 18, 2020 at 09:48 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -71,26 +71,32 @@ CREATE TABLE `events` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `color` varchar(7) DEFAULT NULL,
+  `organizer` varchar(255) DEFAULT NULL,
   `start` datetime NOT NULL,
-  `end` datetime DEFAULT NULL
+  `end` datetime DEFAULT NULL,
+  `eventType` varchar(255) DEFAULT NULL,
+  `people` int(50) NOT NULL,
+  `foodType` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `title`, `color`, `start`, `end`) VALUES
-(1, 'All Day Event', '#40E0D0', '2020-06-01 00:00:00', '0000-00-00 00:00:00'),
-(2, 'Music Festival', '#FF0000', '2020-06-07 00:00:00', '2016-01-10 00:00:00'),
-(3, 'Art Fest', '#0071c5', '2020-05-09 16:00:00', '0000-00-00 00:00:00'),
-(4, 'Conference', '#40E0D0', '2020-06-11 00:00:00', '2016-01-13 00:00:00'),
-(5, 'Meeting', '#000', '2020-06-12 10:30:00', '2016-01-12 12:30:00'),
-(6, 'Lunch', '#0071c5', '2020-06-12 12:00:00', '0000-00-00 00:00:00'),
-(7, 'Happy Hour', '#0071c5', '2020-06-12 17:30:00', '0000-00-00 00:00:00'),
-(8, 'Dinner', '#0071c5', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
-(9, 'Birthday Party', '#FFD700', '2020-05-14 07:00:00', '2016-01-14 07:00:00'),
-(10, 'Double click to change', '#008000', '2020-06-28 00:00:00', '0000-00-00 00:00:00'),
-(17, 'Lunch', '#FF0000', '2020-05-12 12:00:00', '2020-05-12 13:00:00');
+INSERT INTO `events` (`id`, `title`, `color`, `organizer`, `start`, `end`, `eventType`, `people`, `foodType`) VALUES
+(1, 'All Day Event', '#40E0D0', '', '2020-06-01 00:00:00', '0000-00-00 00:00:00', NULL, 0, NULL),
+(2, 'Music Festival', '#FF0000', '', '2020-06-07 00:00:00', '2016-01-10 00:00:00', NULL, 0, NULL),
+(3, 'Art Fest', '#0071c5', '', '2020-05-09 16:00:00', '0000-00-00 00:00:00', NULL, 0, NULL),
+(4, 'Conference', '#40E0D0', '', '2020-06-11 00:00:00', '2016-01-13 00:00:00', NULL, 0, NULL),
+(5, 'Meeting', '#000', '', '2020-06-12 10:30:00', '2016-01-12 12:30:00', NULL, 0, NULL),
+(6, 'Lunch', '#0071c5', '', '2020-06-12 12:00:00', '0000-00-00 00:00:00', NULL, 0, NULL),
+(7, 'Happy Hour', '#0071c5', '', '2020-06-12 17:30:00', '0000-00-00 00:00:00', NULL, 0, NULL),
+(8, 'Dinner', '#0071c5', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, NULL),
+(9, 'Birthday Party', '#0071c5', '', '2020-05-14 07:00:00', '2020-05-14 07:00:00', NULL, 0, NULL),
+(10, 'Double click to change', '#008000', '', '2020-06-28 00:00:00', '0000-00-00 00:00:00', NULL, 0, NULL),
+(23, 'Neshto', '#008000', 'Oganizer 2', '2016-01-05 00:00:00', '2016-01-06 00:00:00', 'Private Party', 21, 'Menu'),
+(24, 'Hello', '#40E0D0', 'Oganizer 5', '2016-01-06 00:00:00', '2016-01-07 00:00:00', 'Birthday party', 16, 'Menu'),
+(25, 'Hello', '#FF8C00', 'Oganizer 2', '2016-01-09 00:00:00', '2016-01-10 00:00:00', 'Conference', 12, 'Menu');
 
 -- --------------------------------------------------------
 
@@ -147,7 +153,7 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `users`
