@@ -1,10 +1,12 @@
+<!-- TO BE REMOVED!! -->
+
 <?php
 
 include_once('../includes/connection.php');
 include_once('../includes/article.php');
 
 $article = new Article();
-//has the user speicified an id? 
+//has the user speicified an id?
 if(isset($_GET['id'])){
 	//display artcle
 	$id = $_GET['id'];
@@ -15,7 +17,7 @@ if(isset($_GET['id'])){
 	<html>
 		<?php
 			include_once('../partials/head.html');
-		?> 
+		?>
 		<body>
 			<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
 	  			<a class="navbar-brand" href="../index.php">Auto Nexus</a>
@@ -23,7 +25,7 @@ if(isset($_GET['id'])){
 	    			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 	    			<!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">GO</button> -->
 	  			</form>
-			</nav>	
+			</nav>
 			<div class="container">
 				<br><br>
 				<div class="overall">
@@ -40,7 +42,7 @@ if(isset($_GET['id'])){
 			</div>
 			<?php
 				include_once('../partials/dependencies.html');
-			?> 
+			?>
 		</body>
 	</html>
 
@@ -52,4 +54,4 @@ if(isset($_GET['id'])){
 }
 
 
-?> 
+?>
