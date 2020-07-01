@@ -90,7 +90,7 @@ $row=$select_stmt->fetch(PDO::FETCH_ASSOC);
             if($usertype == 1){
               echo ("Your account type is: CLIENT");
             }else if($usertype == 2){
-              eecho ("Your account type is: ORGANIZER");
+              echo ("Your account type is: ORGANIZER");
             } else{
               echo ("Your account type is: ADMINISTRATOR");
             }
