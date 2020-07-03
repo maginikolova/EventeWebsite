@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 03, 2020 at 10:24 AM
+-- Generation Time: Jul 04, 2020 at 12:40 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -53,7 +53,7 @@ INSERT INTO `events` (`id`, `title`, `color`, `organizer`, `start`, `end`, `even
 (7, 'Happy Hour', '#0071c5', '', '2020-06-12 17:30:00', '0000-00-00 00:00:00', NULL, 0, NULL, ''),
 (8, 'Dinner', '#0071c5', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, NULL, ''),
 (9, 'Birthday Party', '#0071c5', '', '2020-05-14 07:00:00', '2020-05-14 07:00:00', NULL, 0, NULL, ''),
-(10, 'Double click to change', '#008000', '', '2020-06-28 00:00:00', '0000-00-00 00:00:00', NULL, 0, NULL, ''),
+(10, 'Double click to change', '#FFD700', 'Oganizer 1', '2020-06-28 00:00:00', '0000-00-00 00:00:00', 'Private Party', 0, 'Menu', ''),
 (23, 'Neshto', '#008000', 'Oganizer 2', '2016-01-05 00:00:00', '2016-01-06 00:00:00', 'Private Party', 21, 'Menu', ''),
 (24, 'Hello', '#40E0D0', 'Oganizer 5', '2016-01-06 00:00:00', '2016-01-07 00:00:00', 'Birthday party', 16, 'Menu', ''),
 (25, 'Hello', '#FF8C00', 'Oganizer 2', '2016-01-09 00:00:00', '2016-01-10 00:00:00', 'Conference', 12, 'Menu', ''),
@@ -61,7 +61,7 @@ INSERT INTO `events` (`id`, `title`, `color`, `organizer`, `start`, `end`, `even
 (28, 'Hello', '#0071c5', 'Oganizer 3', '2020-06-09 00:00:00', '2020-06-10 00:00:00', 'Team building', 21, 'Menu', ''),
 (29, 'Hello', '#008000', 'Oganizer 5', '2020-06-16 00:00:00', '2020-06-17 00:00:00', 'Birthday party', 321, 'Menu', ''),
 (30, 'Partyyy', '#FF8C00', 'Oganizer 5', '2020-06-02 00:00:00', '2020-06-03 00:00:00', 'Birthday party', 21, 'Menu', 'Party hard'),
-(35, 'Party more', '#008000', 'Oganizer 1', '2020-07-10 00:00:00', '2020-07-11 00:00:00', 'Private Party', 21, 'Catering', '');
+(35, 'Party more', '#0071c5', 'Oganizer 1', '2020-07-10 00:00:00', '2020-07-11 00:00:00', 'Private Party', 21, 'Catering', '');
 
 -- --------------------------------------------------------
 
@@ -73,6 +73,7 @@ CREATE TABLE `requests` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `color` varchar(7) DEFAULT NULL,
+  `client` varchar(255) NOT NULL,
   `organizer` varchar(255) DEFAULT NULL,
   `start` datetime NOT NULL,
   `end` datetime DEFAULT NULL,
@@ -86,11 +87,14 @@ CREATE TABLE `requests` (
 -- Dumping data for table `requests`
 --
 
-INSERT INTO `requests` (`id`, `title`, `color`, `organizer`, `start`, `end`, `eventType`, `people`, `foodType`, `description`) VALUES
-(23, 'Party', '#008000', 'Oganizer 2', '2020-07-13 00:00:00', '2020-07-14 00:00:00', 'Private Party', 21, 'Menu', ''),
-(24, 'Happy Birthday Tiffany', '#40E0D0', 'Oganizer 5', '2020-07-16 00:00:00', '2020-07-17 00:00:00', 'Birthday party', 16, 'Menu', ''),
-(25, 'Conference', '#FF8C00', 'Oganizer 2', '2020-07-20 00:00:00', '2020-07-22 00:00:00', 'Conference', 12, 'Menu', ''),
-(27, 'Birthday', '#40E0D0', 'Oganizer 4', '2020-07-08 00:00:00', '2020-07-09 00:00:00', 'Birthday party', 16, 'Menu', '');
+INSERT INTO `requests` (`id`, `title`, `color`, `client`, `organizer`, `start`, `end`, `eventType`, `people`, `foodType`, `description`) VALUES
+(23, 'Party', '#008000', 'teya1', 'teya2', '2020-07-13 00:00:00', '2020-07-14 00:00:00', 'Private Party', 21, 'Menu', ''),
+(24, 'Happy Birthday Tiffany', '#40E0D0', 'teya1', 'teya3', '2020-07-16 00:00:00', '2020-07-17 00:00:00', 'Birthday party', 16, 'Menu', ''),
+(25, 'Conference', '#FF8C00', 'teya1', 'Oganizer 2', '2020-07-20 00:00:00', '2020-07-22 00:00:00', 'Conference', 12, 'Menu', ''),
+(27, 'Birthday', '#40E0D0', 'teya1', 'Oganizer 4', '2020-07-08 00:00:00', '2020-07-09 00:00:00', 'Birthday party', 16, 'Menu', ''),
+(29, 'tey', '#0071c5', '', 'Oganizer 1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Private Party', 0, 'Menu', ''),
+(30, 'Anniversary', '#40E0D0', '', 'teya3', '2020-05-06 00:00:00', '2016-01-06 00:00:00', 'Other', 12, 'Catering', 'Wedding anniversary'),
+(31, 'Hello', '#0071c5', '', 'teya2', '2020-05-06 00:00:00', '2020-05-06 02:00:00', 'Private Party', 2, 'Menu', 'hehe');
 
 -- --------------------------------------------------------
 
@@ -113,7 +117,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`) VALUES
 (4, 'admin', '$2y$10$gIFXpCRx5V.cOMYSvy/nD.sy48yVb6UtZ33GiLF2vXh2FyWLmW4vi', 1, 'admin@danielradst.com'),
 (8, 'teya1', '$2y$10$E9oDqBhRkD4RL/jE97FTk.4233aXtW4ZUZv5VY50ze.pLNSmpPKIe', 1, 'teya1@mail.com'),
-(9, 'teya2', '$2y$10$qF4ZFUc6ZBBCxVeEPfzoqeqV6wgqfkOJDl7oJ7BbhiwYaPjm1AW0m', 2, 'teya123@mail.com');
+(9, 'teya2', '$2y$10$qF4ZFUc6ZBBCxVeEPfzoqeqV6wgqfkOJDl7oJ7BbhiwYaPjm1AW0m', 2, 'teya123@mail.com'),
+(10, 'teya3', '$2y$10$/Rm8UeidBrxzL9s3d9pKQOOwnia8.fALcIFZNY4BSjJOnbwgV/JY6', 2, 'teya3@mail.com');
 
 --
 -- Indexes for dumped tables
@@ -151,13 +156,13 @@ ALTER TABLE `events`
 -- AUTO_INCREMENT for table `requests`
 --
 ALTER TABLE `requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
