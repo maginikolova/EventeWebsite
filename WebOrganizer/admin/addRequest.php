@@ -1,5 +1,4 @@
 <?php
-
 // Connection to database
 require_once('../includes/connection.php');
 //echo $_POST['title'];
@@ -16,7 +15,7 @@ isset($_POST['organizer']) && isset($_POST['eventType']) && isset($_POST['people
 	$foodType = $_POST['foodType'];
 	$description = $_POST['description'];
 
-	$sql = "INSERT INTO events(title, start, end, color, organizer, eventType, people, foodType, description) values ('$title', '$start', '$end', '$color', '$organizer','$eventType', '$people', '$foodType', '$description')";
+	$sql = "INSERT INTO requests(title, start, end, color, organizer, eventType, people, foodType, description) values ('$title', '$start', '$end', '$color', '$organizer','$eventType', '$people', '$foodType', '$description')";
 	//$req = $pdo->prepare($sql);
 	//$req->execute();
 	
@@ -35,6 +34,5 @@ isset($_POST['organizer']) && isset($_POST['eventType']) && isset($_POST['people
 
 }
 header('Location: '.$_SERVER['HTTP_REFERER']);
-
 	
 ?>

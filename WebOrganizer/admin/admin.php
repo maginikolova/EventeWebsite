@@ -6,7 +6,7 @@ session_start();
 // check if user is logged in
 if(isset($_SESSION['user_login'])) {
 	// display admin page
-	header('Location: panel.php');
+	header('Location: calendar.php');
 	
 } 
 
@@ -37,8 +37,8 @@ if(isset($_REQUEST['btn_login'])) {
 		         	if($username==$row["username"] OR $email==$row["email"]){
 		         		if(password_verify($password, $row["password"])){
 		         			$_SESSION["user_login"] = $row["user_id"];
-		         			$loginMsg= "Successfully Logged In.";
-		         			header("Location: panel.php");
+							$loginMsg= "Successfully Logged In.";
+							header("Location: galery.php");
 		         		}
 		         		else{
 		         			$errorMsg[]="Wrong Password !";
@@ -64,7 +64,7 @@ if(isset($_REQUEST['btn_login'])) {
 			include_once('../partials/head.html');
 		?> 
 		<body>
-						    <!-- Navigation -->
+				<!-- Navigation -->
 				<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
 			 		<a class="navbar-brand" href="../index.php">Event Organizer</a>
 				 		<ul class="nav">

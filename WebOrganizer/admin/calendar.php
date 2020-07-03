@@ -42,24 +42,24 @@ $events = $req->fetchAll();
     <!-- Navigation -->
 	 <!-- Navigation -->
 	 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    	 <a class="navbar-brand" href="../index.php">Event Organizer</a>
- 			<ul class="nav">
-			 <li class="nav-item">
-			    <a class="nav-link " href="panel.php">Admin Panel</a>
-			  </li>
-			  <li class="nav-item">
-			    <a class="nav-link " href="allevents.php">Galery</a>
-			  </li>
-			 <li class="nav-item">
-			    <a class="nav-link " href="calendar.php">Calendar</a>
-			  </li>
-			   <li class="nav-item">
-			    <a class="nav-link " href="editAccountInfo.php">Settings</a>
-			  </li>
-			   <li class="nav-item">
-			    <a class="nav-link " href="logout.php">Log Out</a>
-			  </li>
-			</ul>	
+          <a class="navbar-brand" href="../index.php">Event Organizer</a>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link " href="galery.php">Gallery</a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link " href="calendar.php">Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="panel.php">Requests</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="editAccountInfo.php">Settings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="logout.php">Log Out</a>
+            </li>
+          </ul>	
  			
 		</nav>	
 
