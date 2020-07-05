@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2020 at 12:40 AM
+-- Generation Time: Jul 05, 2020 at 01:08 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -45,23 +45,49 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `title`, `color`, `organizer`, `start`, `end`, `eventType`, `people`, `foodType`, `description`) VALUES
-(1, 'All Day Event', '#40E0D0', '', '2020-06-01 00:00:00', '0000-00-00 00:00:00', NULL, 0, NULL, ''),
-(2, 'Music Festival', '#FF0000', '', '2020-06-07 00:00:00', '2016-01-10 00:00:00', NULL, 0, NULL, ''),
+(1, 'Teambuilding', '#40E0D0', 'teya3', '2020-06-01 00:00:00', '0000-00-00 00:00:00', NULL, 0, NULL, ''),
+(2, 'Music Festival', '#FF0000', 'teya2', '2020-06-07 00:00:00', '2016-01-10 00:00:00', NULL, 0, NULL, ''),
 (4, 'Conference', '#40E0D0', '', '2020-06-11 00:00:00', '2016-01-13 00:00:00', NULL, 0, NULL, ''),
-(5, 'Meeting', '#000', '', '2020-06-12 10:30:00', '2016-01-12 12:30:00', NULL, 0, NULL, ''),
-(6, 'Lunch', '#0071c5', '', '2020-06-12 12:00:00', '0000-00-00 00:00:00', NULL, 0, NULL, ''),
-(7, 'Happy Hour', '#0071c5', '', '2020-06-12 17:30:00', '0000-00-00 00:00:00', NULL, 0, NULL, ''),
-(8, 'Dinner', '#0071c5', '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, NULL, ''),
-(9, 'Birthday Party', '#0071c5', '', '2020-05-14 07:00:00', '2020-05-14 07:00:00', NULL, 0, NULL, ''),
-(10, 'Double click to change', '#FFD700', 'Oganizer 1', '2020-06-28 00:00:00', '0000-00-00 00:00:00', 'Private Party', 0, 'Menu', ''),
-(23, 'Neshto', '#008000', 'Oganizer 2', '2016-01-05 00:00:00', '2016-01-06 00:00:00', 'Private Party', 21, 'Menu', ''),
-(24, 'Hello', '#40E0D0', 'Oganizer 5', '2016-01-06 00:00:00', '2016-01-07 00:00:00', 'Birthday party', 16, 'Menu', ''),
-(25, 'Hello', '#FF8C00', 'Oganizer 2', '2016-01-09 00:00:00', '2016-01-10 00:00:00', 'Conference', 12, 'Menu', ''),
-(27, 'Hello', '#40E0D0', 'Oganizer 4', '2020-06-10 00:00:00', '2020-06-11 00:00:00', 'Wedding', 21, 'Catering', 'Hello'),
-(28, 'Hello', '#0071c5', 'Oganizer 3', '2020-06-09 00:00:00', '2020-06-10 00:00:00', 'Team building', 21, 'Menu', ''),
-(29, 'Hello', '#008000', 'Oganizer 5', '2020-06-16 00:00:00', '2020-06-17 00:00:00', 'Birthday party', 321, 'Menu', ''),
-(30, 'Partyyy', '#FF8C00', 'Oganizer 5', '2020-06-02 00:00:00', '2020-06-03 00:00:00', 'Birthday party', 21, 'Menu', 'Party hard'),
-(35, 'Party more', '#0071c5', 'Oganizer 1', '2020-07-10 00:00:00', '2020-07-11 00:00:00', 'Private Party', 21, 'Catering', '');
+(5, 'Meeting', '#000', 'teya3', '2020-06-12 10:30:00', '2016-01-12 12:30:00', NULL, 0, NULL, ''),
+(6, 'Lunch', '#0071c5', 'teya2', '2020-06-12 12:00:00', '0000-00-00 00:00:00', NULL, 0, NULL, ''),
+(7, 'Happy Hour', '#0071c5', 'teya2', '2020-06-12 17:30:00', '0000-00-00 00:00:00', NULL, 0, NULL, ''),
+(8, 'Dinner', '#0071c5', 'teya2', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, NULL, ''),
+(9, 'Birthday Party', '#0071c5', 'teya3', '2020-05-14 07:00:00', '2020-05-14 07:00:00', NULL, 0, NULL, ''),
+(10, 'Title ', '#FFD700', 'Oganizer 1', '2020-06-28 00:00:00', '0000-00-00 00:00:00', 'Private Party', 0, 'Menu', ''),
+(24, 'Wedding', '#40E0D0', 'teya2', '2016-01-06 00:00:00', '2016-01-07 00:00:00', 'Birthday party', 16, 'Menu', ''),
+(25, 'Title', '#FF8C00', 'Oganizer 2', '2016-01-09 00:00:00', '2016-01-10 00:00:00', 'Conference', 12, 'Menu', ''),
+(27, 'Conference', '#40E0D0', 'teya3', '2020-06-10 00:00:00', '2020-06-11 00:00:00', 'Wedding', 21, 'Catering', 'Hello'),
+(29, 'Title', '#008000', 'Oganizer 5', '2020-06-16 00:00:00', '2020-06-17 00:00:00', 'Birthday party', 321, 'Menu', ''),
+(30, 'Party', '#FF8C00', 'teya3', '2020-06-02 00:00:00', '2020-06-03 00:00:00', 'Birthday party', 21, 'Menu', 'Party hard'),
+(35, 'Party more', '#0071c5', 'Oganizer 1', '2020-07-10 00:00:00', '2020-07-11 00:00:00', 'Private Party', 21, 'Catering', ''),
+(36, 'Title', '#0071c5', 'teya2', '2020-05-06 00:00:00', '2020-05-06 02:00:00', 'Private Party', 2, 'Menu', 'hehe');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `galery`
+--
+
+CREATE TABLE `galery` (
+  `id` int(255) NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `picProfile` varchar(255) CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `galery`
+--
+
+INSERT INTO `galery` (`id`, `username`, `picProfile`) VALUES
+(1, 'Teambuilding', '93908.jpg'),
+(2, 'Music Festival', '865602.jpg'),
+(5, 'Meeting', '427331.jpg'),
+(6, 'Lunch', '646840.jpg'),
+(7, 'Happy Hour', '63666.jpg'),
+(8, 'Dinner', '422393.jpg'),
+(9, 'Birthday Party', '484008.jpg'),
+(24, 'Wedding', '573957.jpg'),
+(27, 'Conference', '605459.jpg');
 
 -- --------------------------------------------------------
 
@@ -94,7 +120,7 @@ INSERT INTO `requests` (`id`, `title`, `color`, `client`, `organizer`, `start`, 
 (27, 'Birthday', '#40E0D0', 'teya1', 'Oganizer 4', '2020-07-08 00:00:00', '2020-07-09 00:00:00', 'Birthday party', 16, 'Menu', ''),
 (29, 'tey', '#0071c5', '', 'Oganizer 1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Private Party', 0, 'Menu', ''),
 (30, 'Anniversary', '#40E0D0', '', 'teya3', '2020-05-06 00:00:00', '2016-01-06 00:00:00', 'Other', 12, 'Catering', 'Wedding anniversary'),
-(31, 'Hello', '#0071c5', '', 'teya2', '2020-05-06 00:00:00', '2020-05-06 02:00:00', 'Private Party', 2, 'Menu', 'hehe');
+(38, 'asdsda', '', 'teya1', 'teya3', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -131,6 +157,12 @@ ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `galery`
+--
+ALTER TABLE `galery`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `requests`
 --
 ALTER TABLE `requests`
@@ -150,13 +182,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT for table `galery`
+--
+ALTER TABLE `galery`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `requests`
 --
 ALTER TABLE `requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `users`
