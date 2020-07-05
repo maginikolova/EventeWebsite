@@ -15,12 +15,6 @@ $select_stmt->execute(array(":uid"=>$id));
 
 $row=$select_stmt->fetch(PDO::FETCH_ASSOC);
 
-//session_start(); //we need session for the log in thingy
-
-//if($_SESSION['login']!==true){
-	//header('location:login.php');
-//}
-
 ?>
 
 <html>

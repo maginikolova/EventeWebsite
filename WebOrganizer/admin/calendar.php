@@ -39,7 +39,6 @@ $events = $req->fetchAll();
 
 <body>
 
-    <!-- Navigation -->
 	 <!-- Navigation -->
 	 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
           <a class="navbar-brand" href="../index.php">Event Organizer</a>
