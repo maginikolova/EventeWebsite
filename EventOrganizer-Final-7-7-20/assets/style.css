@@ -1,0 +1,38 @@
+.form-inline{
+	margin-bottom: 0px !Important;
+}
+
+.item-title{
+	text-transform: capitalize;
+}
+
+.item-date{
+	float: right;
+	text-align: right;
+	background-color: white;
+	padding: 0px 10px;
+	color: darkblue;
+}
+
+.overall{
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+.article-date, .jumbotron h1{
+	text-transform: uppercase;
+}
+
+.jumbotron h1, p, .article-date{
+	text-align: center;
+}
+
+.overall .jumbotron{
+	padding-bottom: 0px !Important;
+}
+
+.overall .jumbotron .btn{
+	margin-left: -32px;
+}
+
+
